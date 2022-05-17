@@ -1,0 +1,50 @@
+
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <form action="{% url 'tregister' %}"method="POST" enctype="multipart/form-data" >
+              
+
+           {% csrf_token%}
+            <label>Username</label>
+            <input type="text" name="username" title="Enter Username" required>
+            
+            <br>
+            <label> Email</label> 
+  
+          <input type="email" name="email" title="Enter email" required>
+             
+            <br>
+            <label>Phone number</label>
+            
+            <input type="text" name="phoneno" title="Enter phone number" required>
+            
+            <br>
+            
+            <label>Password</label>
+            <input type="password" name="password" required/>
+             <br>
+
+            <label>Confirm Password</label>
+            <input type="password" name="cpassword" />
+   
+           <br>
+            <input type="submit" name="register" value="Create account"  />
+
+        
+        </form>
+    </div>
+</body>
+</html>
+
+{% endblock %}
